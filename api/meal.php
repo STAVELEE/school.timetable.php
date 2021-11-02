@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <meta http-equiv="refresh" content="10; url=https://school-timetable.vercel.app/S10-9010132/all"> -->
+    <meta http-equiv="refresh" content="10; url=https://school-timetable.vercel.app/S10-9010132/all">
 
     <title>남해정보산업고등학교 급식표</title>
 
