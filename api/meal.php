@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="10; url=https://school-timetable.vercel.app/S10-9010132/all">
+    <!-- <meta http-equiv="refresh" content="10; url=https://school-timetable.vercel.app/S10-9010132/all"> -->
 
     <title>남해정보산업고등학교 급식표</title>
 
@@ -67,15 +67,7 @@
                     echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $lunch[$i]) . '</p>';
                 } ?>
             </div>
-            <br>
-            <?php if (sizeof($dinner) > 1) : ?>
-                <div class="col-lg-6 mx-auto feature col">
-                    <h2 class="display-6 fw-bold">저녁</h2>
-                    <?php for ($i = 0; $i < sizeof($dinner); $i++) {
-                        echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $dinner[$i]) . '</p>';
-                    } ?>
-                </div>
-            <?php endif; ?>
+          
         </div>
     </div>
 
