@@ -36,6 +36,9 @@
     $snoopy = new Snoopy;
     $snoopy->fetch($URL);
     $return = json_decode($snoopy->results);
+    echo '<script>';
+    echo 'console.dir(' . json_encode($return) . ')';
+    echo '</script>';
     $lunch = explode("<br/>", $return->mealServiceDietInfo[1]->row[0]->DDISH_NM);
     $dinner = explode("<br/>", $return->mealServiceDietInfo[1]->row[1]->DDISH_NM);
     ?>
