@@ -9,14 +9,12 @@
     <title>남해정보산업고등학교 급식표</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </head>
 
@@ -50,35 +48,42 @@
 
     ?>
 
+<style>
+    .lead{
+        font-size: 28px;
+        font-weight: 600;
+    }
+</style>
 
-    <div class="container-fluid text-center">
-        <h1 style="padding-top: 15px;">남해정보산업고등학교</h1>
+    <div class="px-4 py-5 my-5 text-center">
+    <h3 style="font-size: 18px;">남해정보산업고등학교</h3>
+    <h1 class="display-5 fw-bold">급식표</h1>
+    <br>
+    <div class="col-lg-6 mx-auto">
+     <?php for ($i = 0; $i < sizeof($meal); $i++) {
+                        echo '<p class="lead">' . preg_replace("/[0-9,.]/", "", $meal[$i]) . '</p>';
+                    } ?>
+    
+    </div>
+  </div>
+
+
+  <div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="text-muted">© 2021 Stave, Lee</span>
     </div>
 
-        <div class="container-fluid text-center">
-            <div class="row">
-
-            
-                <div class="col-lg-4">
-                    <h1 class="text-center">급식표</h1>
-                    <?php for ($i = 0; $i < sizeof($meal); $i++) {
-                        echo '<p>' . preg_replace("/[0-9,.]/", "", $meal[$i]) . '</p>';
-                    } ?>
-                </div>
-
-
-            </div>
-        </div>
-
-    <footer>
-        <div class="footer-credit">
-            <div class="center-wrap">
-                <p class="footer-credit-content"><strong class="footer-credit-name">STAVE</strong>Producer : <a href="https://github.com/JoonsungUm">Joonsung Um</a>, <a href="https://github.com/STAVELEE">Jihwan Lee</a>
-                </p>
-                <div class="footer-credit-copyright">Copyright © Stave Lee. All Rights Reserved.</div>
-            </div>
-        </div>
-    </footer>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+    </ul>
+  </footer>
+</div>
 </body>
 
 
