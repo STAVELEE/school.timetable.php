@@ -20,32 +20,24 @@
 
 <body>
 
-    <!-- PHP코드 -->
     <?php
-    //error_reporting(E_ALL);
-    //ini_set("display_errors", 1);
-
-
-    // $date = date("Ymd", time() ' +1 day');
     $date = date("Ymd", time());
     $ScCode = 'S10';
     $SdCode = '9010132';
     $grade = NULL;
     $class = NULL;
 
-    //if($grade == NULL) $grade = 2;
-    //if($class == NULL) $class = 1;
-
     $table = [];
     $meal = [];
     require("Snoopy.class.php");
 
     $URL = "https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=2d4fce9a93674075895a2c89338434c0&Type=json&ATPT_OFCDC_SC_CODE=$ScCode&SD_SCHUL_CODE=$SdCode&MLSV_YMD=$date";
-    $snoopy = new Snoopy; // snoopy 생성
+
+    $snoopy = new Snoopy;
     $snoopy->fetch($URL);
     $return = json_decode($snoopy->results);
-    $meal = explode("<br/>", $return->mealServiceDietInfo[1]->row[0]->DDISH_NM);
-
+    $lunch = explode("<br/>", $return->mealServiceDietInfo[1]->row[0]->DDISH_NM);
+    $dinner = explode("<br/>", $return->mealServiceDietInfo[1]->row[1]->DDISH_NM);
     ?>
 
     <style>
@@ -60,21 +52,30 @@
             font-size: 28px;
             font-weight: 600;
         }
-        
     </style>
 
     <div class="px-4 py-5 my-5 text-center">
         <h3 style="font-size: 18px;">남해정보산업고등학교</h3>
         <h1 class="display-5 fw-bold">급식표</h1>
         <br>
-        <div class="col-lg-6 mx-auto">
-            <?php for ($i = 0; $i < sizeof($meal); $i++) {
-                echo '<p class="lead">' . preg_replace("/[0-9,.]/", "", $meal[$i]) . '</p>';
-            } ?>
-
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+            <div class="col-lg-6 mx-auto feature col">
+                <h2 class="display-6 fw-bold">점심</h2>
+                <?php for ($i = 0; $i < sizeof($lunch); $i++) {
+                    echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $lunch[$i]) . '</p>';
+                } ?>
+            </div>
+            <br>
+            <?php if (sizeof($dinner) > 1) : ?>
+                <div class="col-lg-6 mx-auto feature col">
+                    <h2 class="display-6 fw-bold">저녁</h2>
+                    <?php for ($i = 0; $i < sizeof($dinner); $i++) {
+                        echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $dinner[$i]) . '</p>';
+                    } ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
-
 
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -82,7 +83,7 @@
                 <span class="text-muted">© 2021 Stave, Lee</span>
             </div>
 
-            
+
         </footer>
     </div>
 </body>
