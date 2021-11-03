@@ -35,11 +35,11 @@
     $snoopy = new Snoopy;
     $snoopy->fetch($URL);
     $return = json_decode($snoopy->results);
-    echo '<script>';
-    echo 'console.dir(' . json_encode($return) . ')';
-    echo '</script>';
+
     $lunch = explode("<br/>", $return->mealServiceDietInfo[1]->row[0]->DDISH_NM);
-    // $dinner = explode("<br/>", $return->mealServiceDietInfo[1]->row[1]->DDISH_NM);
+    $dinner = isset($return->mealServiceDietInfo[1]->row[1])
+        ? explode("<br/>", $return->mealServiceDietInfo[1]->row[1]->DDISH_NM)
+        : [];
     ?>
 
     <style>
@@ -67,7 +67,15 @@
                     echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $lunch[$i]) . '</p>';
                 } ?>
             </div>
-          
+            <br>
+            <?php if (sizeof($dinner) > 1) : ?>
+                <div class="col-lg-6 mx-auto feature col">
+                    <h2 class="display-6 fw-bold">저녁</h2>
+                    <?php for ($i = 0; $i < sizeof($dinner); $i++) {
+                        echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $dinner[$i]) . '</p>';
+                    } ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
