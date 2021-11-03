@@ -23,6 +23,7 @@
     <?php
     date_default_timezone_set("Asia/Seoul");
     $toDay = date('Ymd');
+    // $yesterDay = $toDay +1; // 방과후때 저녁 테스트
     $ScCode = 'S10';
     $SdCode = '9010132';
 
@@ -53,6 +54,14 @@
         .lead {
             font-size: 28px;
             font-weight: 600;
+        }
+
+        h2{
+            border-radius: 40px;
+            background-color: green;
+            color: white;
+            margin-left: 25%;
+            margin-right: 25%;
         }
     </style>
 
