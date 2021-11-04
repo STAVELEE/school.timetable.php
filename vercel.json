@@ -12,6 +12,10 @@
     {
       "src": "/index",
       "dest": "api/index.php"
+    },
+    {
+      "src": "/board",
+      "dest": "api/board.html"
     }
   ]
 }
