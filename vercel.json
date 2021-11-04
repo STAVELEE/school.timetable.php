@@ -16,6 +16,14 @@
     {
       "src": "/board",
       "dest": "board.html"
+    },
+    {
+      "src": "/board2",
+      "dest": "board2.html"
+    },
+    {
+      "src": "/board2",
+      "dest": "board2.html"
     }
   ]
 }
