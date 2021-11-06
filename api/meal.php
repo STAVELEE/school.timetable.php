@@ -37,7 +37,10 @@
     $snoopy->fetch($URL);
     $return = json_decode($snoopy->results);
 
-    $lunch = explode("<br/>", $return->mealServiceDietInfo[1]->row[0]->DDISH_NM);
+    $lunch = isset($return->mealServiceDietInfo[1]->row[0])
+        ? explode("<br/>", $return->mealServiceDietInfo[1]->row[0]->DDISH_NM)
+        : [];
+
     $dinner = isset($return->mealServiceDietInfo[1]->row[1])
         ? explode("<br/>", $return->mealServiceDietInfo[1]->row[1]->DDISH_NM)
         : [];
@@ -70,13 +73,19 @@
         <h1 class="display-5 fw-bold">급식표</h1>
         <br>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-            <div class="col-lg-6 mx-auto feature col">
-                <h2 class="display-6 fw-bold">점심</h2>
-                <?php for ($i = 0; $i < sizeof($lunch); $i++) {
-                    echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $lunch[$i]) . '</p>';
-                } ?>
-            </div>
-            <br>
+            <?php if (sizeof($lunch) > 1) : ?>
+                <div class="col-lg-6 mx-auto feature col">
+                    <h2 class="display-6 fw-bold">점심</h2>
+                    <?php for ($i = 0; $i < sizeof($lunch); $i++) {
+                        echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $lunch[$i]) . '</p>';
+                    } ?>
+                </div>
+            <?php endif; ?>
+            <?php if (sizeof($lunch) == 0) : ?>
+                <div class="col-lg-6 mx-auto feature col">
+                    <h2 class="display-6 fw-bold">오늘은 급식이 없습니다.</h2>
+                </div>
+            <?php endif; ?>
             <?php if (sizeof($dinner) > 1) : ?>
                 <div class="col-lg-6 mx-auto feature col">
                     <h2 class="display-6 fw-bold">저녁</h2>
