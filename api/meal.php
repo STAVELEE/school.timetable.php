@@ -1,4 +1,10 @@
 <html>
+<!-- 
+    본 사이트는 엔케이엑스랩에서 제작되었습니다.
+    문의 : nkxlab@stave.kr
+
+    도움 : 엄준성(https://github.com/JoonsungUm)
+ -->
 
 <head>
     <meta charset="utf-8">
@@ -56,7 +62,7 @@
             font-weight: 600;
         }
 
-        h2{
+        h2 {
             border-radius: 40px;
             background-color: green;
             color: white;
@@ -91,7 +97,7 @@
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
-                <span class="text-muted">© 2021 Stave, Lee</span>
+                <span class="text-muted">© 2021 NKXLab.</span>
             </div>
 
 
