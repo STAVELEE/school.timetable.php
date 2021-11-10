@@ -16,6 +16,10 @@
     {
       "src": "/board",
       "dest": "board.html"
+    },
+    {
+      "src": "/notice",
+      "dest": "notice.html"
     }
   ]
 }
