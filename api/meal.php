@@ -106,7 +106,7 @@
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
             <div class="col-md-4 d-flex align-items-center">
-                <span class="text-muted">© 2021 NKXLab.</span>
+                <span class="text-muted">© 2021 NKXLab, Inc.<br>© Stave.</span>
             </div>
         </footer>
     </div>
