@@ -1,7 +1,7 @@
 <html>
 <!-- 
     본 사이트는 엔케이엑스랩에서 제작되었습니다.
-    문의 : nkxlab@stave.kr
+    문의 : lee@stave.kr
 
     도움 : 엄준성(https://github.com/JoonsungUm)
  -->
