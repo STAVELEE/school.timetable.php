@@ -82,6 +82,7 @@
             <?php if (sizeof($lunch) > 1) : ?>
                 <div class="col-lg-6 mx-auto feature col">
                     <h2 class="display-6 fw-bold">점심</h2>
+                    <br>
                     <?php for ($i = 0; $i < sizeof($lunch); $i++) {
                         echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $lunch[$i]) . '</p>';
                     } ?>
@@ -95,6 +96,7 @@
             <?php if (sizeof($dinner) > 1) : ?>
                 <div class="col-lg-6 mx-auto feature col">
                     <h2 class="display-6 fw-bold">저녁</h2>
+                    <br>
                     <?php for ($i = 0; $i < sizeof($dinner); $i++) {
                         echo '<p class="lead">' . preg_replace("/[0-9,.@#]/", "", $dinner[$i]) . '</p>';
                     } ?>
