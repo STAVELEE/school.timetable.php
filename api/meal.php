@@ -67,7 +67,7 @@
 
         h2 {
             border-radius: 40px;
-            background-color: green;
+            background-color: #2BAEE2;
             color: white;
             margin-left: 25%;
             margin-right: 25%;
