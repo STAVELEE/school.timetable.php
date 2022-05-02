@@ -1,2 +1,3 @@
-# school.timetable.php
-TEST
+# 학교 급식표 PHP
+2021년 학교 급식 페이지로 사용했던 PHP 소스코드
+또한 행사 일정 등 html로 구현
